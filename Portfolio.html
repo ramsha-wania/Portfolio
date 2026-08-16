@@ -1,21 +1,697 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio Ramsha wania</title>
-    <link rel="stylesheet" href="Portfolio style.css">
+    <title>Ramsha - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.04rem;
+        }
+
+        main hr {
+            border: 0;
+            background-color: #9c97f1;
+            height: 1.04px;
+            margin: 60px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 130px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 2.5rem;
+        }
+
+        .leftSection .buttons {
+            padding: 50px 0;
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            color: white;
+            background: #1e2167;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .rightSection img {
+            width: 80%;
+        }
+
+        .purple {
+            color: rgb(170, 107, 228);
+        }
+
+        #element {
+            color: rgb(170, 107, 228);
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        /* EDUCATION SECTION */
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            min-height: 70vh;
+            padding: 60px 0;
+        }
+
+        .secondSection h1 {
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+
+        .secondSection .box {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .secondSection .vertical {
+            height: 230px;
+            width: auto;
+            margin: 0;
+            padding: 25px 20px;
+            border: 1px solid #9b7cff;
+            border-radius: 12px;
+            background-color: #11113b;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        .secondSection .vertical:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(155, 124, 255, 0.25);
+            border-color: #b36cff;
+        }
+
+        .secondSection .image-top {
+            width: 30px;
+            position: static;
+            margin-bottom: 20px;
+        }
+
+        .secondSection .vertical-title {
+            position: static;
+            width: auto;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .secondSection .vertical-desc {
+            position: static;
+            width: auto;
+            font-size: 13px;
+            color: gray;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #0b0b24;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #0b0b24;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 35px 10%;
+            min-height: 150px;
+            box-sizing: border-box;
+        }
+
+        .footer-first {
+            font-size: 22px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-second {
+            width: 150px;
+        }
+
+        .footer-second h3 {
+            margin: 0 0 12px;
+            color: white;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li {
+            margin: 8px 0;
+        }
+
+        .footer li a {
+            color: gray;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .footer li a:hover {
+            color: #b36cff;
+        }
+
+        .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 15px 0;
+            border-top: 1px solid #9b7cff;
+        }
+
+        .footer li {
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .footer li:hover {
+            color: #b36cff;
+            transform: translateX(5px);
+        }
+
+        .servicesSection {
+            max-width: 80vw;
+            margin: auto;
+            min-height: 70vh;
+            padding: 60px 0;
+        }
+
+        .servicesSection h1 {
+            font-size: 1.9rem;
+            margin: 10px 0 40px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgb(18, 18, 62);
+            border: 1px solid #9c97f1;
+            border-radius: 10px;
+            padding: 25px;
+            width: 30%;
+            min-height: 180px;
+            box-sizing: border-box;
+        }
+
+        .service-card h2 {
+            color: rgb(170, 107, 228);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            color: gray;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .projectsSection {
+            max-width: 80vw;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .projectsSection h1 {
+            font-size: 34px;
+            margin: 10px 0 40px;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .project-card {
+            width: 280px;
+            min-height: 150px;
+            padding: 25px;
+            border: 1px solid #9b7cff;
+            border-radius: 10px;
+            background-color: #11113d;
+        }
+
+        .project-card h2 {
+            color: #b06cff;
+            margin-bottom: 20px;
+        }
+
+        .project-card p {
+            color: gray;
+            line-height: 1.6;
+        }
+
+        .github-btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* CONTACT FORM */
+
+        .contact-container {
+            width: 70%;
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 35px;
+            border: 1px solid #9b7cff;
+            border-radius: 12px;
+            background-color: #11113b;
+            box-sizing: border-box;
+        }
+
+        .contact-container p {
+            color: gray;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            box-sizing: border-box;
+            border: 1px solid #9b7cff;
+            border-radius: 7px;
+            background-color: #08082b;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: gray;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #b36cff;
+        }
+
+        .contact-form button {
+            width: 150px;
+            padding: 12px;
+            border: 1px solid #9b7cff;
+            border-radius: 7px;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #9b7cff;
+            color: white;
+        }
+
+        .contactSection {
+            width: 80%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .contactSection h1 {
+            margin-top: 10px;
+        }
+
+        nav ul li a {
+            position: relative;
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #b36cff;
+            text-shadow: 0 0 10px #b36cff;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -6px;
+            background: #b36cff;
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        header .left {
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        header .left:hover {
+            color: #b36cff;
+            text-shadow: 0 0 12px rgba(179, 108, 255, 0.7);
+        }
+    </style>
 </head>
+
 <body>
-    <center>
-    <h1><u>Ramsha Wania Ansari</u></h1>
-    </center> 
-    <button>Submit</button>
-    <ul>
-        <li>HTML</li>
-        <li>HTML</li>
-        <li>HTML</li>
-        <li>HTML</li>
-    </ul>
+    <header>
+        <nav>
+            <div class="left">Ramsha's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection" id="home">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Ramsha Wania Ansari</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn">Download resume</button>
+                    <button class="btn">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="mypic.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection" id="about">
+            <span class="text-gray">What I have done so far</span>
+            <h1>Education</h1>
+
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="devpic.png" alt="">
+                    <div class="vertical-title">
+                        Class 10th
+                    </div>
+                    <div class="vertical-desc">
+                        Dr. G.L. Kanaujia Public School<br>
+                        Passed in 2023
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="devpic.png" alt="">
+                    <div class="vertical-title">
+                        Class 12th
+                    </div>
+                    <div class="vertical-desc">
+                        Dr. G.L. Kanaujia Public School<br>
+                        Passed in 2025
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="devpic.png" alt="">
+                    <div class="vertical-title">
+                        BCA
+                    </div>
+                    <div class="vertical-desc">
+                        Invertis University, Bareilly<br>
+                        Expected Graduation: 2028
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="devpic.png" alt="">
+                    <div class="vertical-title">
+                        Skills
+                    </div>
+                    <div class="vertical-desc">
+                        C | Python | HTML | CSS
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="devpic.png" alt="">
+                    <div class="vertical-title">
+                        Projects
+                    </div>
+                    <div class="vertical-desc">
+                        Check on Github Profile
+                    </div>
+                </div>
+        </section>
+        </section>
+        <hr>
+
+
+        <section class="servicesSection" id="services">
+            <span class="text-gray">What I can do</span>
+            <h1>Services</h1>
+
+            <div class="services-container">
+
+                <div class="service-card">
+                    <h2>Web Development</h2>
+                    <p>
+                        I can create responsive and user-friendly websites
+                        using HTML and CSS.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h2>Python Programming</h2>
+                    <p>
+                        I have knowledge of Python programming and can
+                        build basic Python projects.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h2>C Programming</h2>
+                    <p>
+                        I have learned C programming and basic Data Structures
+                        and Algorithms.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <hr>
+
+        <section class="projectsSection" id="projects">
+
+            <span class="text-gray">What I have built</span>
+            <h1>Projects</h1>
+
+            <div class="projects-container">
+
+                <div class="project-card">
+                    <h2>Amazon Clone</h2>
+                    <p>
+                        A responsive Amazon-inspired website created
+                        using HTML and CSS.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h2>Gym Website</h2>
+                    <p>
+                        A responsive gym website designed using
+                        HTML and CSS.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h2>Python Projects</h2>
+                    <p>
+                        Basic Python projects created while learning
+                        Python programming.
+                    </p>
+                </div>
+
+            </div>
+
+            <a href="https://github.com/ramsha-wania" target="_blank" class="github-btn">
+                View My GitHub
+            </a>
+
+        </section>
+        <hr>
+
+        <section class="contactSection" id="contact">
+
+            <span class="text-gray">Get in touch</span>
+            <h1>Contact Me</h1>
+
+            <div class="contact-container">
+
+                <p>
+                    I would love to hear from you. Feel free to contact me
+                    for any project or opportunity.
+                </p>
+
+                <form class="contact-form" id="contactForm">
+
+                    <input type="text" name="name" placeholder="Your Name" required>
+
+                    <input type="email" name="email" placeholder="Your Email" required>
+
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+
+                </form>
+
+            </div>
+
+        </section>
+        <hr>
+    </main>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                Ramsha's developer Portfolio
+            </div>
+            <div class="footer-second">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            © 2026 Ramsha's Portfolio | All rights reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Python developer.', 'Data Analytics Enthusiast.', 'Aspiring Software Developer.'],
+            typeSpeed: 50,
+        });
+    </script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const formData = {
+                name: this.name.value,
+                email: this.email.value,
+                message: this.message.value
+            };
+
+            const response = await fetch("http://localhost:3000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            alert(result.message);
+
+            this.reset();
+        });
+    </script>
 </body>
+
 </html>
