@@ -13,7 +13,9 @@ app.use(cors({
 
 // Transporter ek hi baar banao, har request pe nahi
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+    host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.EMAIL_PASSWORD
