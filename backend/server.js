@@ -34,7 +34,7 @@ app.post("/contact", async (req, res) => {
   try {
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
-      to: process.env.TO_EMAIL,
+      to: "vishalkumarvkm93@gmail.com",
       subject: "New Portfolio Contact Message",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
