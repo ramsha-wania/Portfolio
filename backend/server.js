@@ -11,7 +11,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_RomJFR1s_6EUfibA2JrVrWPj7Rgr7iEWs");
 
 app.get("/", (req, res) => {
   res.send("Backend is working!");
