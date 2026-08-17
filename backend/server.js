@@ -11,13 +11,27 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+<<<<<<< HEAD
 const resend = new Resend(process.env.RESEND_API_KEY);
+=======
+// Transporter ek hi baar banao, har request pe nahi
+// const transporter = nodemailer.createTransport({
+//     host: "smtp.gmail.com",
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: process.env.GMAIL_USER,
+//     pass: process.env.EMAIL_PASSWORD
+//   }
+// });
+>>>>>>> 30a7e667f1ecf36509aeb4fbc2e83b3437641b3a
 
 app.get("/", (req, res) => {
   res.send("Backend is working!");
 });
 
 app.post("/contact", async (req, res) => {
+<<<<<<< HEAD
   const { name, email, message } = req.body;
 
   if (!email || !message) {
@@ -32,6 +46,23 @@ app.post("/contact", async (req, res) => {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
 
+=======
+console.log("USER:", process.env.GMAIL_USER);
+console.log("PASS LOADED:", !!process.env.EMAIL_PASSWORD);
+  const { name, email, message } = req.body;
+  if (!email || !message) {
+    return res.status(400).json({ success: false, message: "Email and message are required" });
+  }
+
+  try {
+    // await transporter.sendMail({
+    //   from: process.env.GMAIL_USER,
+    //   to: "tparveen12688@gmail.com",
+    //   subject: "New Portfolio Contact Message",
+    //   text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    // });
+
+>>>>>>> 30a7e667f1ecf36509aeb4fbc2e83b3437641b3a
     res.json({ success: true, message: "Message received successfully!" });
   } catch (error) {
     console.error("Submit Error:", error.message);
@@ -42,4 +73,8 @@ app.post("/contact", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 30a7e667f1ecf36509aeb4fbc2e83b3437641b3a
