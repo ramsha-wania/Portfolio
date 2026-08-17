@@ -16,43 +16,41 @@ app.get("/", (req, res) => {
 app.post("/contact", async (req, res) => {
     console.log(req.body);
 
-    const messages = JSON.parse(
-        fs.readFileSync("messages.json")
-    );
+    // const messages = JSON.parse(
+    //     fs.readFileSync("messages.json")
+    // );
 
-    messages.push(req.body);
+    // messages.push(req.body);
     try {
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
                 user: "ramshawansari@gmail.com",
-                pass: process.env.EMAIL_PASSWORD
+                pass: "zuhj hkro pyxp ejps"
             }
         });
 
-        await transporter.sendMail({
+        console.log(transport)
+
+        const checkCOnd = await transporter.sendMail({
             from: "ramshawansari@gmail.com",
             to: "vishalkumarvkm93@gmail.com",
             subject: "New Portfolio Contact Message",
-            text: `
-Name: ${req.body.name}
-Email: ${req.body.email}
-
-Message:
-${req.body.message}
-`
+            text: `Check`
         });
+        console.log(checkCOnd)
     }
     catch (error) {
+        console.log("issue with send mail")
         console.log("Submit Error", error)
     }
 
 
-    fs.writeFileSync(
-        "messages.json",
-        JSON.stringify(messages, null, 2)
-    );
+    // fs.writeFileSync(
+    //     "messages.json",
+    //     JSON.stringify(messages, null, 2)
+    // );
 
     res.json({
         success: true,
