@@ -12,15 +12,15 @@ app.use(cors({
 }));
 
 // Transporter ek hi baar banao, har request pe nahi
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD
-  }
-});
+// const transporter = nodemailer.createTransport({
+//     host: "smtp.gmail.com",
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: process.env.GMAIL_USER,
+//     pass: process.env.EMAIL_PASSWORD
+//   }
+// });
 
 app.get("/", (req, res) => {
   res.send("Backend is working!");
@@ -35,12 +35,12 @@ console.log("PASS LOADED:", !!process.env.EMAIL_PASSWORD);
   }
 
   try {
-    await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: "tparveen12688@gmail.com",
-      subject: "New Portfolio Contact Message",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-    });
+    // await transporter.sendMail({
+    //   from: process.env.GMAIL_USER,
+    //   to: "tparveen12688@gmail.com",
+    //   subject: "New Portfolio Contact Message",
+    //   text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    // });
 
     res.json({ success: true, message: "Message received successfully!" });
   } catch (error) {
