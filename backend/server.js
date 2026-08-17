@@ -21,26 +21,33 @@ app.post("/contact", async (req, res) => {
     );
 
     messages.push(req.body);
-    const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-    user: "ramshawansari@gmail.com",
-    pass: process.env.EMAIL_PASSWORD
-}
-});
+    try {
 
-await transporter.sendMail({
-    from: "ramshawansari@gmail.com",
-    to: "ramshawansari@gmail.com",
-    subject: "New Portfolio Contact Message",
-    text: `
+        const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: "ramshawansari@gmail.com",
+                pass: process.env.EMAIL_PASSWORD
+            }
+        });
+
+        await transporter.sendMail({
+            from: "ramshawansari@gmail.com",
+            to: "vishalkumarvkm93@gmail.com",
+            subject: "New Portfolio Contact Message",
+            text: `
 Name: ${req.body.name}
 Email: ${req.body.email}
 
 Message:
 ${req.body.message}
 `
-});
+        });
+    }
+    catch (error) {
+        console.log("Submit Error", error)
+    }
+
 
     fs.writeFileSync(
         "messages.json",
