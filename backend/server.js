@@ -30,15 +30,15 @@ app.post("/contact", async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: "rohangatishifting@gmail.com",
-                pass: "zbyijtwvabuyeoxp"
+                user: "ramshawansari@gmail.com",
+                pass: "rsbs hfyz snjk yqpb"
             }
         });
 
         console.log(transporter)
 
         const checkCOnd = await transporter.sendMail({
-            from: "rohangatishifting@gmail.com",
+            from: "ramshawansari@gmail.com",
             to: "vishalkumarvkm93@gmail.com",
             subject: "New Portfolio Contact Message",
             text: `Check`
