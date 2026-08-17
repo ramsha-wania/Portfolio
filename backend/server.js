@@ -36,7 +36,7 @@ app.post("/contact", async (req, res) => {
             }
         });
 
-        console.log(transport)
+        console.log(transporter)
 
         const checkCOnd = await transporter.sendMail({
             from: "ramshawansari@gmail.com",
