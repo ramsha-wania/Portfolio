@@ -444,390 +444,390 @@
             color: #b36cff;
             text-shadow: 0 0 12px rgba(179, 108, 255, 0.7);
         }
+
         /* =========================
    RESPONSIVE DESIGN
    ========================= */
 
-/* Tablet */
-@media (max-width: 900px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    nav {
-        height: auto;
-        padding: 15px 20px;
-        flex-wrap: wrap;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 8px 12px;
-    }
-
-    header .left {
-        font-size: 24px;
-    }
-
-    .firstSection {
-        margin: 80px auto;
-        padding: 20px;
-        gap: 30px;
-    }
-
-    .firstSection > div {
-        width: 45%;
-    }
-
-    .leftSection {
-        font-size: 2rem;
-    }
-
-    .secondSection,
-    .servicesSection,
-    .projectsSection,
-    .contactSection {
-        width: 90%;
-    }
-
-    .secondSection .box {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .services-container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .service-card {
-        width: 45%;
-    }
-
-    .projects-container {
-        flex-wrap: wrap;
-    }
-
-    .project-card {
-        width: 45%;
-    }
-
-    .contact-container {
-        width: 90%;
-    }
-}
-
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* NAVBAR */
-    nav {
-        width: 100%;
-        min-height: auto;
-        padding: 12px 10px;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    header .left {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    nav ul {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0;
-    }
-
-    nav ul li {
-        margin: 5px 8px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-
-    /* HOME SECTION */
-    .firstSection {
-        width: 100%;
-        margin: 60px auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 35px;
-    }
-
-    .firstSection > div {
-        width: 100%;
-    }
-
-    .leftSection {
-        width: 100%;
-        font-size: 1.8rem;
-        line-height: 1.4;
-    }
-
-    .rightSection {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .rightSection img {
-        width: 70%;
-        max-width: 250px;
-        height: auto;
-    }
-
-    .leftSection .buttons {
-        padding: 30px 0;
-    }
-
-    .leftSection .btn {
-        font-size: 16px;
-        padding: 10px 15px;
-        margin: 5px;
-    }
-
-
-    /* COMMON HR */
-    main hr {
-        width: 80%;
-        margin: 50px auto;
-    }
-
-
-    /* ABOUT / EDUCATION */
-    .secondSection {
-        width: 90%;
-        max-width: 100%;
-        height: auto;
-        min-height: auto;
-        padding: 30px 0;
-    }
-
-    .secondSection h1 {
-        font-size: 26px;
-        margin-bottom: 30px;
-    }
-
-    .secondSection .box {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .secondSection .vertical {
-        width: 100%;
-        height: auto;
-        min-height: 200px;
-        padding: 20px;
-    }
-
-    .secondSection .image-top {
-        width: 35px;
-        margin-bottom: 15px;
-    }
-
-    .secondSection .vertical-title {
-        width: 100%;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .secondSection .vertical-desc {
-        width: 100%;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-
-    /* SERVICES */
-    .servicesSection {
-        width: 90%;
-        max-width: 100%;
-        padding: 40px 0;
-        min-height: auto;
-    }
-
-    .servicesSection h1 {
-        font-size: 28px;
-        margin: 10px 0 30px;
-    }
-
-    .services-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .service-card {
-        width: 100%;
-        min-height: auto;
-        padding: 25px;
-    }
-
-    .service-card h2 {
-        font-size: 22px;
-    }
-
-    .service-card p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-
-    /* PROJECTS */
-    .projectsSection {
-        width: 90%;
-        max-width: 100%;
-        padding: 40px 0;
-    }
-
-    .projectsSection h1 {
-        font-size: 28px;
-        margin: 10px 0 30px;
-    }
-
-    .projects-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        width: 100%;
-    }
-
-    .project-card {
-        width: 100%;
-        max-width: 350px;
-        min-height: auto;
-        padding: 25px;
-    }
-
-    .project-card h2 {
-        font-size: 22px;
-    }
-
-    .project-card p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-
-    /* CONTACT */
-    .contactSection {
-        width: 90%;
-        padding: 40px 0;
-    }
-
-    .contact-container {
-        width: 100%;
-        max-width: 100%;
-        margin: 20px auto;
-        padding: 25px 20px;
-    }
-
-    .contact-container p {
-        font-size: 15px;
-    }
-
-    .contact-form {
-        width: 100%;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .contact-form button {
-        width: 100%;
-        max-width: 200px;
-        align-self: center;
-    }
-
-
-    /* FOOTER */
-    .footer {
-        width: 100%;
-        padding: 30px 20px;
-        min-height: auto;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 25px;
-    }
-
-    .footer-first {
-        font-size: 20px;
-    }
-
-    .footer-second {
-        width: 100%;
-    }
-
-    .footer-rights {
-        width: 100%;
-        font-size: 13px;
-    }
-}
-
-
-/* Very small phones */
-@media (max-width: 380px) {
-
-    header .left {
-        font-size: 19px;
-    }
-
-    nav ul li {
-        margin: 4px 5px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-    .leftSection {
-        font-size: 1.5rem;
-    }
-
-    .leftSection .btn {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    .service-card,
-    .project-card {
-        padding: 20px;
-    }
-}
-
+        /* Tablet */
+        @media (max-width: 900px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            nav {
+                height: auto;
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 8px 12px;
+            }
+
+            header .left {
+                font-size: 24px;
+            }
+
+            .firstSection {
+                margin: 80px auto;
+                padding: 20px;
+                gap: 30px;
+            }
+
+            .firstSection>div {
+                width: 45%;
+            }
+
+            .leftSection {
+                font-size: 2rem;
+            }
+
+            .secondSection,
+            .servicesSection,
+            .projectsSection,
+            .contactSection {
+                width: 90%;
+            }
+
+            .secondSection .box {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .services-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .service-card {
+                width: 45%;
+            }
+
+            .projects-container {
+                flex-wrap: wrap;
+            }
+
+            .project-card {
+                width: 45%;
+            }
+
+            .contact-container {
+                width: 90%;
+            }
+        }
+
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            /* NAVBAR */
+            nav {
+                width: 100%;
+                min-height: auto;
+                padding: 12px 10px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            header .left {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            nav ul {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 5px 8px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+
+            /* HOME SECTION */
+            .firstSection {
+                width: 100%;
+                margin: 60px auto;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .firstSection>div {
+                width: 100%;
+            }
+
+            .leftSection {
+                width: 100%;
+                font-size: 1.8rem;
+                line-height: 1.4;
+            }
+
+            .rightSection {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .rightSection img {
+                width: 70%;
+                max-width: 250px;
+                height: auto;
+            }
+
+            .leftSection .buttons {
+                padding: 30px 0;
+            }
+
+            .leftSection .btn {
+                font-size: 16px;
+                padding: 10px 15px;
+                margin: 5px;
+            }
+
+
+            /* COMMON HR */
+            main hr {
+                width: 80%;
+                margin: 50px auto;
+            }
+
+
+            /* ABOUT / EDUCATION */
+            .secondSection {
+                width: 90%;
+                max-width: 100%;
+                height: auto;
+                min-height: auto;
+                padding: 30px 0;
+            }
+
+            .secondSection h1 {
+                font-size: 26px;
+                margin-bottom: 30px;
+            }
+
+            .secondSection .box {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .secondSection .vertical {
+                width: 100%;
+                height: auto;
+                min-height: 200px;
+                padding: 20px;
+            }
+
+            .secondSection .image-top {
+                width: 35px;
+                margin-bottom: 15px;
+            }
+
+            .secondSection .vertical-title {
+                width: 100%;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .secondSection .vertical-desc {
+                width: 100%;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+
+            /* SERVICES */
+            .servicesSection {
+                width: 90%;
+                max-width: 100%;
+                padding: 40px 0;
+                min-height: auto;
+            }
+
+            .servicesSection h1 {
+                font-size: 28px;
+                margin: 10px 0 30px;
+            }
+
+            .services-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .service-card {
+                width: 100%;
+                min-height: auto;
+                padding: 25px;
+            }
+
+            .service-card h2 {
+                font-size: 22px;
+            }
+
+            .service-card p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+
+            /* PROJECTS */
+            .projectsSection {
+                width: 90%;
+                max-width: 100%;
+                padding: 40px 0;
+            }
+
+            .projectsSection h1 {
+                font-size: 28px;
+                margin: 10px 0 30px;
+            }
+
+            .projects-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                width: 100%;
+            }
+
+            .project-card {
+                width: 100%;
+                max-width: 350px;
+                min-height: auto;
+                padding: 25px;
+            }
+
+            .project-card h2 {
+                font-size: 22px;
+            }
+
+            .project-card p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+
+            /* CONTACT */
+            .contactSection {
+                width: 90%;
+                padding: 40px 0;
+            }
+
+            .contact-container {
+                width: 100%;
+                max-width: 100%;
+                margin: 20px auto;
+                padding: 25px 20px;
+            }
+
+            .contact-container p {
+                font-size: 15px;
+            }
+
+            .contact-form {
+                width: 100%;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .contact-form button {
+                width: 100%;
+                max-width: 200px;
+                align-self: center;
+            }
+
+
+            /* FOOTER */
+            .footer {
+                width: 100%;
+                padding: 30px 20px;
+                min-height: auto;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .footer-first {
+                font-size: 20px;
+            }
+
+            .footer-second {
+                width: 100%;
+            }
+
+            .footer-rights {
+                width: 100%;
+                font-size: 13px;
+            }
+        }
+
+
+        /* Very small phones */
+        @media (max-width: 380px) {
+
+            header .left {
+                font-size: 19px;
+            }
+
+            nav ul li {
+                margin: 4px 5px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .leftSection {
+                font-size: 1.5rem;
+            }
+
+            .leftSection .btn {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .service-card,
+            .project-card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -1057,11 +1057,11 @@
 
             const form = event.currentTarget;
 
-const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value
-};
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                message: form.message.value
+            };
 
             const response = await fetch("https://portfolio-backend-whr0.onrender.com/contact", {
                 method: "POST",

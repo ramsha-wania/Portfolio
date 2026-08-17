@@ -1,60 +1,45 @@
 require("dotenv").config();
-const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
 const app = express();
-
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+  origin: "https://portfolio-1-8o7c.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.get("/", (req, res) => {
-    res.send("Backend is working!");
+  res.send("Backend is working!");
 });
 
 app.post("/contact", async (req, res) => {
-    console.log(req.body);
+  const { name, email, message } = req.body;
 
-    const messages = JSON.parse(
-        fs.readFileSync("messages.json")
-    );
+  if (!email || !message) {
+    return res.status(400).json({ success: false, message: "Email and message are required" });
+  }
 
-    messages.push(req.body);
-    const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-    user: "ramshawansari@gmail.com",
-    pass: process.env.EMAIL_PASSWORD
-}
-});
-
-await transporter.sendMail({
-    from: "ramshawansari@gmail.com",
-    to: "ramshawansari@gmail.com",
-    subject: "New Portfolio Contact Message",
-    text: `
-Name: ${req.body.name}
-Email: ${req.body.email}
-
-Message:
-${req.body.message}
-`
-});
-
-    fs.writeFileSync(
-        "messages.json",
-        JSON.stringify(messages, null, 2)
-    );
-
-    res.json({
-        success: true,
-        message: "Message received successfully!"
+  try {
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "tparveen12688@gmail.com",
+      subject: "New Portfolio Contact Message",
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
+
+    res.json({ success: true, message: "Message received successfully!" });
+  } catch (error) {
+    console.error("Submit Error:", error.message);
+    res.status(500).json({ success: false, message: "Failed to send message" });
+  }
 });
 
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
