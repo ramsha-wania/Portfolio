@@ -1053,28 +1053,38 @@
     <script src="script.js"></script>
     <script>
         document.getElementById("contactForm").addEventListener("submit", async function (event) {
-            event.preventDefault();
+    event.preventDefault();
 
-            const formData = {
-                name: this.name.value,
-                email: this.email.value,
-                message: this.message.value
-            };
+    const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value
+    };
 
-            const response = await fetch("https://portfolio-backend-whr0.onrender.com/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
-
-            const result = await response.json();
-
-            alert(result.message);
-
-            this.reset();
+    try {
+        const response = await fetch("https://portfolio-backend-whr0.onrender.com/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
         });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message);
+            this.reset();
+        } else {
+            alert("Error: " + (result.message || "Something went wrong"));
+        }
+
+    } catch (error) {
+        console.error("Contact form error:", error);
+        alert("Unable to send message. Please try again.");
+    }
+});
+        
     </script>
 </body>
 
