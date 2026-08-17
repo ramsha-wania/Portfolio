@@ -9,11 +9,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://portfolio-1-8o7c.onrender.com",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  origin: "https://portfolio-1-8o7c.onrender.com"
 }));
 
+app.options("*", cors());
 app.get("/", (req, res) => {
     res.send("Backend is working!");
 });
@@ -29,19 +28,17 @@ app.post("/contact", async (req, res) => {
     try {
 
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+            service: "gmail",
             auth: {
-                user: "ramshawansari@gmail.com",
-                pass: "zuhj hkro pyxp ejps"
+                user: "rohangatishifting@gmail.com",
+                pass: "zbyijtwvabuyeoxp"
             }
         });
 
         console.log(transporter)
 
         const checkCOnd = await transporter.sendMail({
-            from: "ramshawansari@gmail.com",
+            from: "rohangatishifting@gmail.com",
             to: "vishalkumarvkm93@gmail.com",
             subject: "New Portfolio Contact Message",
             text: `Check`
