@@ -9,10 +9,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://portfolio-1-8o7c.onrender.com"
+  origin: "https://portfolio-1-8o7c.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
-app.options("*", cors());
 app.get("/", (req, res) => {
     res.send("Backend is working!");
 });
