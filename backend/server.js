@@ -6,8 +6,13 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
-app.use(cors());
+
 app.use(express.json());
+app.use(cors({
+  origin: "https://portfolio-1-8o7c.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 
 app.get("/", (req, res) => {
     res.send("Backend is working!");
