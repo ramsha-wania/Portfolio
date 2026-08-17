@@ -35,7 +35,7 @@ console.log("PASS LOADED:", !!process.env.EMAIL_PASSWORD);
   try {
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
-      to: "ramshawansari@gmail.com",
+      to: "tparveen12688@gmail.com",
       subject: "New Portfolio Contact Message",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
