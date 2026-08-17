@@ -25,8 +25,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/contact", async (req, res) => {
+console.log("USER:", process.env.GMAIL_USER);
+console.log("PASS LOADED:", !!process.env.EMAIL_PASSWORD);
   const { name, email, message } = req.body;
-
   if (!email || !message) {
     return res.status(400).json({ success: false, message: "Email and message are required" });
   }
